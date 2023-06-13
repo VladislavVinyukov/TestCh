@@ -1,0 +1,87 @@
+﻿@page
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Intersected Department Vacations</h2>
+@if (ViewBag.IntersectedDepartmentVacations != null)
+{
+    <table>
+        <tr>
+            <th>Employee</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+        </tr>
+        @foreach (var vacation in ViewBag.IntersectedDepartmentVacations)
+        {
+            <tr>
+                <td>@vacation.Employee.FullName</td>
+                <td>@vacation.StartDate.ToShortDateString()</td>
+                <td>@vacation.EndDate.ToShortDateString()</td>
+            </tr>
+        }
+    </table>
+}
+
+<h2>Intersected Female Vacations</h2>
+@if (ViewBag.IntersectedFemaleVacations != null)
+{
+    <table>
+        <tr>
+            <th>Employee</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+        </tr>
+        @foreach (var vacation in ViewBag.IntersectedFemaleVacations)
+        {
+            <tr>
+                <td>@vacation.Employee.FullName</td>
+                <td>@vacation.StartDate.ToShortDateString()</td>
+                <td>@vacation.EndDate.ToShortDateString()</td>
+            </tr>
+        }
+    </table>
+}
+
+<h2>Intersected Senior Vacations</h2>
+@if (ViewBag.IntersectedSeniorVacations != null)
+{
+    <table>
+        <tr>
+            <th>Employee</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+        </tr>
+        @foreach (var vacation in ViewBag.IntersectedSeniorVacations)
+        {
+            <tr>
+                <td>@vacation.Employee.FullName</td>
+                <td>@vacation.StartDate.ToShortDateString()</td>
+                <td>@vacation.EndDate.ToShortDateString()</td>
+            </tr>
+        }
+    </table>
+}
+
+<h2>Non-Intersected Vacations</h2>
+@if (ViewBag.NonIntersectedVacations != null)
+{
+    <table>
+        <tr>
+            <th>Employee</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+        </tr>
+        @foreach (var vacation in ViewBag.NonIntersectedVacations)
+        {
+            <tr>
+                <td>@vacation.Employee.FullName</td>
+                <td>@vacation.StartDate.ToShortDateString()</td>
+                <td>@vacation.EndDate.ToShortDateString()</td>
+            </tr>
+        }
+    </table>
+}
+
+<br />
+<a href="@Url.Action("NewVacation")">Create New Vacation</a>

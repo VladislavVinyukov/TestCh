@@ -1,0 +1,18 @@
+﻿@page
+@model Vacation
+
+<h2>New Vacation</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.StartDate)
+    @Html.TextBoxFor(model => model.StartDate, new { type = "date" })
+    <br />
+    @Html.LabelFor(model => model.EndDate)
+    @Html.TextBoxFor(model => model.EndDate, new { type = "date" })
+    <br />
+    @Html.LabelFor(model => model.Employee.FullName)
+    @Html.TextBoxFor(model => model.Employee.FullName)
+    <br />
+    <input type="submit" value="Submit" />
+}
